@@ -1,16 +1,13 @@
 let slownik = {};
 
-// załaduj słownik z pliku JSON
-fetch("./slownik.json")
-  .then(response => response.json())
+fetch("./slownik.json") // <- Upewnij się, że jest "./"
+  .then(res => res.json())
   .then(data => slownik = data)
   .catch(err => console.error("Błąd ładowania słownika", err));
 
 function szukaj() {
-  const pole = document.getElementById("slowo");
+  const slowo = document.getElementById("slowo").value.toLowerCase().trim();
   const wynikDiv = document.getElementById("wynik");
-
-  const slowo = pole.value.toLowerCase().trim();
 
   if (!slowo) {
     wynikDiv.innerText = "Wpisz słowo.";
