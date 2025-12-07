@@ -1,7 +1,7 @@
 let slownik = {};
 
 // załaduj słownik z pliku JSON
-fetch("slownik.json")
+fetch("./slownik.json")
   .then(response => response.json())
   .then(data => slownik = data)
   .catch(err => console.error("Błąd ładowania słownika", err));
